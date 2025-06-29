@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snapchat Security Guide - SecureMe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body class="bg-white">
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🔐</span>
+                SecureMe
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="secure-accounts.html">Accounts</a></li>
+                <li><a href="hacked.html">Hacked</a></li>
+                <li><a href="ai-assistant.html">Assistant</a></li>
+                <li><a href="security-tools.html">Tools</a></li>
+                <li><a href="security-resources.html">Resources</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Open menu" onclick="toggleMobileMenu()">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <ul class="mobile-nav-links" id="mobileNavLinks" style="display:none;">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="secure-accounts.html">Accounts</a></li>
+        <li><a href="hacked.html">Hacked</a></li>
+        <li><a href="ai-assistant.html">Assistant</a></li>
+        <li><a href="security-tools.html">Tools</a></li>
+        <li><a href="security-resources.html">Resources</a></li>
+    </ul>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Guide Hero -->
+        <section class="guide-hero">
+            <div class="container">
+                <div class="guide-header">
+                    <div class="guide-icon">👻</div>
+                    <div class="guide-info">
+                        <h1 class="heading-1">Snapchat Security Guide</h1>
+                        <p class="text-large">Complete step-by-step guide to secure your Snapchat account</p>
+                        <div class="guide-meta">
+                            <span class="meta-item">⏱️ 12 minutes</span>
+                            <span class="meta-item">📱 Mobile Focused</span>
+                            <span class="meta-item">🎥 Video guides included</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Content -->
+        <section class="section">
+            <div class="container">
+                <div class="guide-content">
+                    
+                    <!-- Step 1: Two-Factor Authentication -->
+                    <div class="guide-step">
+                        <div class="step-header">
+                            <div class="step-number">1</div>
+                            <h2>Enable Two-Factor Authentication</h2>
+                        </div>
+                        
+                        <div class="step-content">
+                            <div class="step-description">
+                                <p>Two-factor authentication adds an extra layer of security by requiring a code from your phone in addition to your password.</p>
+                                <div class="step-tips">
+                                    <h4>💡 Pro Tips:</h4>
+                                    <ul>
+                                        <li>Use SMS verification for quick setup</li>
+                                        <li>Keep your phone number updated</li>
+                                        <li>Test the setup immediately after enabling</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="step-media">
+                                <div class="video-container">
+                                    <video controls poster="images/thumbnails/snapchat-2fa-thumb.jpg">
+                                        <source src="videos/snapchat-2fa-setup.mp4" type="video/mp4">
+                                        <source src="videos/snapchat-2fa-setup.webm" type="video/webm">
+                                        Your browser doesn't support video playback.
+                                    </video>
+                                    <div class="video-controls">
+                                        <button class="video-speed" onclick="changeSpeed(0.5)">0.5x</button>
+                                        <button class="video-speed active" onclick="changeSpeed(1)">1x</button>
+                                        <button class="video-speed" onclick="changeSpeed(1.5)">1.5x</button>
+                                        <button class="video-speed" onclick="changeSpeed(2)">2x</button>
+                                    </div>
+                                </div>
+                                <p class="video-caption">Watch: How to enable 2FA on Snapchat (2:15)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Review Login Activity -->
+                    <div class="guide-step">
+                        <div class="step-header">
+                            <div class="step-number">2</div>
+                            <h2>Review Login Activity</h2>
+                        </div>
+                        
+                        <div class="step-content">
+                            <div class="step-description">
+                                <p>Check which devices are currently logged into your Snapchat account and remove any suspicious ones.</p>
+                                <div class="step-tips">
+                                    <h4>🔍 What to Look For:</h4>
+                                    <ul>
+                                        <li>Unknown devices or locations</li>
+                                        <li>Multiple sessions from the same device</li>
+                                        <li>Logins from different countries</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="step-media">
+                                <div class="screenshot-container">
+                                    <img src="images/screenshots/snapchat-login-activity.jpg" alt="Snapchat login activity screen">
+                                    <div class="screenshot-overlay">
+                                        <button class="btn btn-primary" onclick="showFullScreenshot('snapchat-login-activity')">
+                                            🔍 View Full Size
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="screenshot-caption">Snapchat Settings > Login Activity</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Privacy Settings -->
+                    <div class="guide-step">
+                        <div class="step-header">
+                            <div class="step-number">3</div>
+                            <h2>Manage Privacy Settings</h2>
+                        </div>
+                        
+                        <div class="step-content">
+                            <div class="step-description">
+                                <p>Control who can see your stories, send you snaps, and view your location.</p>
+                                <div class="step-tips">
+                                    <h4>🔒 Recommended Settings:</h4>
+                                    <ul>
+                                        <li>Set "Who Can Contact Me" to "My Friends"</li>
+                                        <li>Disable "See My Location" for privacy</li>
+                                        <li>Set "Who Can View My Story" to "My Friends"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="step-media">
+                                <div class="video-container">
+                                    <video controls poster="images/thumbnails/snapchat-privacy-thumb.jpg">
+                                        <source src="videos/snapchat-privacy-settings.mp4" type="video/mp4">
+                                        <source src="videos/snapchat-privacy-settings.webm" type="video/webm">
+                                        Your browser doesn't support video playback.
+                                    </video>
+                                </div>
+                                <p class="video-caption">Watch: Privacy settings walkthrough (3:30)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Contact Controls -->
+                    <div class="guide-step">
+                        <div class="step-header">
+                            <div class="step-number">4</div>
+                            <h2>Control Who Can Contact You</h2>
+                        </div>
+                        
+                        <div class="step-content">
+                            <div class="step-description">
+                                <p>Manage who can send you snaps, messages, and friend requests to prevent unwanted contact.</p>
+                                <div class="step-tips">
+                                    <h4>🛡️ Security Settings:</h4>
+                                    <ul>
+                                        <li>Set "Who Can Send Me Snaps" to "My Friends"</li>
+                                        <li>Enable "Only My Friends" for messages</li>
+                                        <li>Review and remove unwanted friends</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="step-media">
+                                <div class="screenshot-container">
+                                    <img src="images/screenshots/snapchat-contact-settings.jpg" alt="Snapchat contact settings">
+                                    <div class="screenshot-overlay">
+                                        <button class="btn btn-primary" onclick="showFullScreenshot('snapchat-contact-settings')">
+                                            🔍 View Full Size
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="screenshot-caption">Snapchat Settings > Privacy > Contact Me</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <h3>Quick Actions</h3>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary" onclick="markAsComplete()">
+                                ✅ Mark Guide as Complete
+                            </button>
+                            <button class="btn btn-secondary" onclick="downloadChecklist()">
+                                📋 Download Checklist
+                            </button>
+                            <button class="btn btn-secondary" onclick="shareGuide()">
+                                📤 Share This Guide
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <span class="logo-icon">🔐</span>
+                <span class="logo">SecureMe</span>
+            </div>
+            <p class="footer-text">
+                Built with ❤️ for GDG WOW 2025 Hackathon
+            </p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <!-- Toast placeholder -->
+    <!-- Toasts are injected dynamically by main.js -->
+    <div id="toast-container"></div>
+
+</body>
+</html> 

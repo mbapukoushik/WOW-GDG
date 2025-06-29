@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Security Guide - SecureMe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body class="bg-white">
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🔐</span>
+                SecureMe
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="secure-accounts.html">Accounts</a></li>
+                <li><a href="hacked.html">Hacked</a></li>
+                <li><a href="ai-assistant.html">Assistant</a></li>
+                <li><a href="security-tools.html">Tools</a></li>
+                <li><a href="security-resources.html">Resources</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Open menu" onclick="toggleMobileMenu()">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <ul class="mobile-nav-links" id="mobileNavLinks" style="display:none;">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="secure-accounts.html">Accounts</a></li>
+        <li><a href="hacked.html">Hacked</a></li>
+        <li><a href="ai-assistant.html">Assistant</a></li>
+        <li><a href="security-tools.html">Tools</a></li>
+        <li><a href="security-resources.html">Resources</a></li>
+    </ul>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Guide Hero -->
+        <section class="guide-hero">
+            <div class="container">
+                <div class="guide-header">
+                    <div class="guide-icon">📧</div>
+                    <div class="guide-info">
+                        <h1 class="heading-1">Gmail Security Guide</h1>
+                        <p class="text-large">Complete step-by-step guide to secure your Gmail account</p>
+                        <div class="guide-meta">
+                            <span class="meta-item">⏱️ 18 minutes</span>
+                            <span class="meta-item">💻 Desktop & Mobile</span>
+                            <span class="meta-item">🎥 Video guides included</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Content -->
+        <section class="section">
+            <div class="container">
+                <div class="guide-content">
+                    
+                    <!-- Step 1: 2-Step Verification -->
+                    <div class="guide-step">
+                        <div class="step-header">
+                            <div class="step-number">1</div>
+                            <h2>Enable 2-Step Verification</h2>
+                        </div>
+                        
+                        <div class="step-content">
+                            <div class="step-description">
+                                <p>2-Step Verification adds an extra layer of security by requiring a second form of verification in addition to your password.</p>
+                                <div class="step-tips">
+                                    <h4>💡 Pro Tips:</h4>
+                                    <ul>
+                                        <li>Use Google Authenticator app for better security</li>
+                                        <li>Set up backup phone numbers</li>
+                                        <li>Generate backup codes for emergencies</li>
+                                        <li>Test the setup immediately after enabling</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="step-media">
+                                <div class="video-container">
+                                    <video controls poster="images/thumbnails/gmail-2fa-thumb.jpg">
+                                        <source src="videos/gmail-2fa-setup.mp4" type="video/mp4">
+                                        <source src="videos/gmail-2fa-setup.webm" type="video/webm">
+                                        Your browser doesn't support video playback.
+                                    </video>
+                                    <div class="video-controls">
+                                        <button class="video-speed" onclick="changeSpeed(0.5)">0.5x</button>
+                                        <button class="video-speed active" onclick="changeSpeed(1)">1x</button>
+                                        <button class="video-speed" onclick="changeSpeed(1.5)">1.5x</button>
+                                        <button class="video-speed" onclick="changeSpeed(2)">2x</button>
+                                    </div>
+                                </div>
+                                <p class="video-caption">Watch: How to enable 2-Step Verification (3:15)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Account Activity -->
+                    <div class="guide-step">
+                        <div class="step-header">
+                            <div class="step-number">2</div>
+                            <h2>Review Account Activity</h2>
+                        </div>
+                        
+                        <div class="step-content">
+                            <div class="step-description">
+                                <p>Check your recent account activity to identify any suspicious logins or unauthorized access.</p>
+                                <div class="step-tips">
+                                    <h4>🔍 What to Look For:</h4>
+                                    <ul>
+                                        <li>Unknown devices or locations</li>
+                                        <li>Unusual login times</li>
+                                        <li>Multiple failed login attempts</li>
+                                        <li>Sign-ins from different countries</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="step-media">
+                                <div class="screenshot-container">
+                                    <img src="images/screenshots/gmail-account-activity.jpg" alt="Gmail account activity screen">
+                                    <div class="screenshot-overlay">
+                                        <button class="btn btn-primary" onclick="showFullScreenshot('gmail-account-activity')">
+                                            🔍 View Full Size
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="screenshot-caption">Google Account > Security > Recent security activity</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: App Passwords -->
+                    <div class="guide-step">
+                        <div class="step-header">
+                            <div class="step-number">3</div>
+                            <h2>Check App Passwords</h2>
+                        </div>
+                        
+                        <div class="step-content">
+                            <div class="step-description">
+                                <p>Review and manage app passwords for third-party applications that access your Gmail account.</p>
+                                <div class="step-tips">
+                                    <h4>🛡️ Security Best Practices:</h4>
+                                    <ul>
+                                        <li>Remove unused app passwords</li>
+                                        <li>Use unique passwords for each app</li>
+                                        <li>Regularly review and update</li>
+                                        <li>Revoke access for suspicious apps</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="step-media">
+                                <div class="video-container">
+                                    <video controls poster="images/thumbnails/gmail-app-passwords-thumb.jpg">
+                                        <source src="videos/gmail-app-passwords.mp4" type="video/mp4">
+                                        <source src="videos/gmail-app-passwords.webm" type="video/webm">
+                                        Your browser doesn't support video playback.
+                                    </video>
+                                </div>
+                                <p class="video-caption">Watch: Managing app passwords (2:45)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Recovery Options -->
+                    <div class="guide-step">
+                        <div class="step-header">
+                            <div class="step-number">4</div>
+                            <h2>Set Up Recovery Options</h2>
+                        </div>
+                        
+                        <div class="step-content">
+                            <div class="step-description">
+                                <p>Configure recovery email and phone number to regain access to your account if needed.</p>
+                                <div class="step-tips">
+                                    <h4>📞 Recovery Setup:</h4>
+                                    <ul>
+                                        <li>Add a recovery email address</li>
+                                        <li>Add a recovery phone number</li>
+                                        <li>Keep recovery info updated</li>
+                                        <li>Test recovery process</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="step-media">
+                                <div class="screenshot-container">
+                                    <img src="images/screenshots/gmail-recovery-options.jpg" alt="Gmail recovery options">
+                                    <div class="screenshot-overlay">
+                                        <button class="btn btn-primary" onclick="showFullScreenshot('gmail-recovery-options')">
+                                            🔍 View Full Size
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="screenshot-caption">Google Account > Security > Recovery options</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <h3>Quick Actions</h3>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary" onclick="markAsComplete()">
+                                ✅ Mark Guide as Complete
+                            </button>
+                            <button class="btn btn-secondary" onclick="downloadChecklist()">
+                                📋 Download Checklist
+                            </button>
+                            <button class="btn btn-secondary" onclick="shareGuide()">
+                                📤 Share This Guide
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <span class="logo-icon">🔐</span>
+                <span class="logo">SecureMe</span>
+            </div>
+            <p class="footer-text">
+                Built with ❤️ for GDG WOW 2025 Hackathon
+            </p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <!-- Toast placeholder -->
+    <!-- Toasts are injected dynamically by main.js -->
+    <div id="toast-container"></div>
+
+</body>
+</html> 

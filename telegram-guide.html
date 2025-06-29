@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Security Guide - SecureMe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body class="bg-white">
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🔐</span>
+                SecureMe
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="secure-accounts.html">Accounts</a></li>
+                <li><a href="hacked.html">Hacked</a></li>
+                <li><a href="ai-assistant.html">Assistant</a></li>
+                <li><a href="security-tools.html">Tools</a></li>
+                <li><a href="security-resources.html">Resources</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Open menu" onclick="toggleMobileMenu()">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <ul class="mobile-nav-links" id="mobileNavLinks" style="display:none;">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="secure-accounts.html">Accounts</a></li>
+        <li><a href="hacked.html">Hacked</a></li>
+        <li><a href="ai-assistant.html">Assistant</a></li>
+        <li><a href="security-tools.html">Tools</a></li>
+        <li><a href="security-resources.html">Resources</a></li>
+    </ul>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Guide Hero -->
+        <section class="guide-hero">
+            <div class="container">
+                <div class="guide-header">
+                    <div class="guide-icon">✈️</div>
+                    <div class="guide-info">
+                        <h1 class="heading-1">Telegram Security Guide</h1>
+                        <p class="text-large">Complete step-by-step guide to secure your Telegram account</p>
+                        <div class="guide-meta">
+                            <span class="meta-item">⏱️ 15 minutes</span>
+                            <span class="meta-item">📱 Mobile & Desktop</span>
+                            <span class="meta-item">🎥 Video guides included</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Content -->
+        <section class="section">
+            <div class="container">
+                <div class="guide-content">
+                    
+                    <!-- Step 1: Two-Step Verification -->
+                    <div class="guide-step">
+                        <div class="step-header">
+                            <div class="step-number">1</div>
+                            <h2>Enable Two-Step Verification</h2>
+                        </div>
+                        
+                        <div class="step-content">
+                            <div class="step-description">
+                                <p>Two-step verification adds an extra layer of security by requiring a password in addition to the SMS code.</p>
+                                <div class="step-tips">
+                                    <h4>💡 Pro Tips:</h4>
+                                    <ul>
+                                        <li>Use a strong, unique password</li>
+                                        <li>Save your recovery email</li>
+                                        <li>Test the setup immediately after enabling</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="step-media">
+                                <div class="video-container">
+                                    <video controls poster="images/thumbnails/telegram-2fa-thumb.jpg">
+                                        <source src="videos/telegram-2fa-setup.mp4" type="video/mp4">
+                                        <source src="videos/telegram-2fa-setup.webm" type="video/webm">
+                                        Your browser doesn't support video playback.
+                                    </video>
+                                    <div class="video-controls">
+                                        <button class="video-speed" onclick="changeSpeed(0.5)">0.5x</button>
+                                        <button class="video-speed active" onclick="changeSpeed(1)">1x</button>
+                                        <button class="video-speed" onclick="changeSpeed(1.5)">1.5x</button>
+                                        <button class="video-speed" onclick="changeSpeed(2)">2x</button>
+                                    </div>
+                                </div>
+                                <p class="video-caption">Watch: How to enable 2FA on Telegram (2:45)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Secret Chats -->
+                    <div class="guide-step">
+                        <div class="step-header">
+                            <div class="step-number">2</div>
+                            <h2>Set Up Secret Chats</h2>
+                        </div>
+                        
+                        <div class="step-content">
+                            <div class="step-description">
+                                <p>Secret chats provide end-to-end encryption and self-destructing messages for maximum privacy.</p>
+                                <div class="step-tips">
+                                    <h4>🔐 Security Features:</h4>
+                                    <ul>
+                                        <li>End-to-end encryption</li>
+                                        <li>Self-destructing messages</li>
+                                        <li>No forwarding or screenshots</li>
+                                        <li>Device-specific chats</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="step-media">
+                                <div class="screenshot-container">
+                                    <img src="images/screenshots/telegram-secret-chat.jpg" alt="Telegram secret chat setup">
+                                    <div class="screenshot-overlay">
+                                        <button class="btn btn-primary" onclick="showFullScreenshot('telegram-secret-chat')">
+                                            🔍 View Full Size
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="screenshot-caption">Telegram Menu > New Secret Chat</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Active Sessions -->
+                    <div class="guide-step">
+                        <div class="step-header">
+                            <div class="step-number">3</div>
+                            <h2>Manage Active Sessions</h2>
+                        </div>
+                        
+                        <div class="step-content">
+                            <div class="step-description">
+                                <p>Review and terminate sessions on devices you no longer use or don't recognize.</p>
+                                <div class="step-tips">
+                                    <h4>🔍 What to Check:</h4>
+                                    <ul>
+                                        <li>Unknown devices or locations</li>
+                                        <li>Old sessions you forgot about</li>
+                                        <li>Multiple sessions from same device</li>
+                                        <li>Terminate suspicious sessions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="step-media">
+                                <div class="video-container">
+                                    <video controls poster="images/thumbnails/telegram-sessions-thumb.jpg">
+                                        <source src="videos/telegram-sessions-management.mp4" type="video/mp4">
+                                        <source src="videos/telegram-sessions-management.webm" type="video/webm">
+                                        Your browser doesn't support video playback.
+                                    </video>
+                                </div>
+                                <p class="video-caption">Watch: Managing active sessions (2:20)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Privacy Settings -->
+                    <div class="guide-step">
+                        <div class="step-header">
+                            <div class="step-number">4</div>
+                            <h2>Configure Privacy Settings</h2>
+                        </div>
+                        
+                        <div class="step-content">
+                            <div class="step-description">
+                                <p>Control who can see your phone number, last seen, and profile information.</p>
+                                <div class="step-tips">
+                                    <h4>🔒 Recommended Settings:</h4>
+                                    <ul>
+                                        <li>Set "Last Seen" to "My Contacts"</li>
+                                        <li>Hide phone number from everyone</li>
+                                        <li>Set "Profile Photo" to "My Contacts"</li>
+                                        <li>Disable "Forwarded Messages" preview</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="step-media">
+                                <div class="screenshot-container">
+                                    <img src="images/screenshots/telegram-privacy-settings.jpg" alt="Telegram privacy settings">
+                                    <div class="screenshot-overlay">
+                                        <button class="btn btn-primary" onclick="showFullScreenshot('telegram-privacy-settings')">
+                                            🔍 View Full Size
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="screenshot-caption">Telegram Settings > Privacy and Security</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <h3>Quick Actions</h3>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary" onclick="markAsComplete()">
+                                ✅ Mark Guide as Complete
+                            </button>
+                            <button class="btn btn-secondary" onclick="downloadChecklist()">
+                                📋 Download Checklist
+                            </button>
+                            <button class="btn btn-secondary" onclick="shareGuide()">
+                                📤 Share This Guide
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <span class="logo-icon">🔐</span>
+                <span class="logo">SecureMe</span>
+            </div>
+            <p class="footer-text">
+                Built with ❤️ for GDG WOW 2025 Hackathon
+            </p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <!-- Toast placeholder -->
+    <!-- Toasts are injected dynamically by main.js -->
+    <div id="toast-container"></div>
+
+</body>
+</html> 

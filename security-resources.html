@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Resources - SecureMe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        .resources-section { max-width: 800px; margin: 2rem auto; background: #f9fafb; border-radius: 1rem; box-shadow: 0 2px 8px rgba(59,130,246,0.06); padding: 2rem; }
+        .resources-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+        .toggle-switch { display: flex; align-items: center; gap: 0.5rem; }
+        .resource-category { margin-bottom: 2.5rem; }
+        .resource-category h2 { color: var(--primary-blue-dark); margin-bottom: 1rem; font-size: 1.3rem; }
+        .resource-list { display: flex; flex-direction: column; gap: 1.2rem; }
+        .resource-card { background: white; border-radius: 0.7rem; box-shadow: 0 1px 4px rgba(59,130,246,0.06); padding: 1.2rem 1rem; display: flex; flex-direction: column; gap: 0.3rem; border-left: 5px solid var(--primary-blue-light); position: relative; }
+        .resource-title { font-weight: 600; font-size: 1.08rem; color: var(--primary-blue); }
+        .resource-desc { color: var(--gray-700); font-size: 0.98rem; }
+        .resource-link { color: var(--primary-blue-dark); text-decoration: underline; font-weight: 500; }
+        .resource-tag { position: absolute; top: 1rem; right: 1rem; font-size: 0.85em; padding: 0.2em 0.7em; border-radius: 1em; font-weight: 600; }
+        .tag-free { background: #d1fae5; color: #059669; }
+        .tag-paid { background: #fee2e2; color: #dc2626; }
+    </style>
+</head>
+<body class="bg-white">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🔐</span>
+                SecureMe
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="secure-accounts.html">Accounts</a></li>
+                <li><a href="hacked.html">Hacked</a></li>
+                <li><a href="ai-assistant.html">Assistant</a></li>
+                <li><a href="security-tools.html">Tools</a></li>
+                <li><a href="security-resources.html" class="active">Resources</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Open menu" onclick="toggleMobileMenu()">
+                <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <ul class="mobile-nav-links" id="mobileNavLinks" style="display:none;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="secure-accounts.html">Accounts</a></li>
+            <li><a href="hacked.html">Hacked</a></li>
+            <li><a href="ai-assistant.html">Assistant</a></li>
+            <li><a href="security-tools.html">Tools</a></li>
+            <li><a href="security-resources.html" class="active">Resources</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="resources-section">
+            <div class="resources-header">
+                <h1 style="font-size:1.5rem;color:var(--primary-blue-dark);font-weight:700;">🔗 Security Resources</h1>
+            </div>
+            <div id="resourcesContent">
+                <!-- Password Managers -->
+                <div class="resource-category">
+                    <h2>🔑 Password Managers</h2>
+                    <div class="resource-list">
+                        <div class="resource-card" data-paid="false">
+                            <span class="resource-title">Bitwarden <a href="https://bitwarden.com/" class="resource-link" target="_blank">Visit</a></span>
+                            <span class="resource-desc">Free, open-source password manager for individuals and teams. Securely store and autofill passwords across devices.</span>
+                            <span class="resource-tag tag-free">Free</span>
+                        </div>
+                        <div class="resource-card" data-paid="true">
+                            <span class="resource-title">1Password <a href="https://1password.com/" class="resource-link" target="_blank">Visit</a></span>
+                            <span class="resource-desc">Premium password manager with advanced sharing and security features. Free trial available.</span>
+                            <span class="resource-tag tag-paid">Paid</span>
+                        </div>
+                        <div class="resource-card" data-paid="true">
+                            <span class="resource-title">LastPass <a href="https://www.lastpass.com/" class="resource-link" target="_blank">Visit</a></span>
+                            <span class="resource-desc">Popular password manager with free and paid plans. Easy to use and widely supported.</span>
+                            <span class="resource-tag tag-paid">Paid</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Breach Check -->
+                <div class="resource-category">
+                    <h2>🔎 Data Breach Check</h2>
+                    <div class="resource-list">
+                        <div class="resource-card" data-paid="false">
+                            <span class="resource-title">HaveIBeenPwned <a href="https://haveibeenpwned.com/" class="resource-link" target="_blank">Visit</a></span>
+                            <span class="resource-desc">Check if your email or password has appeared in a known data breach. Free and trusted by millions.</span>
+                            <span class="resource-tag tag-free">Free</span>
+                        </div>
+                        <div class="resource-card" data-paid="false">
+                            <span class="resource-title">Firefox Monitor <a href="https://monitor.firefox.com/" class="resource-link" target="_blank">Visit</a></span>
+                            <span class="resource-desc">Mozilla's free tool to check for email breaches and get alerts about new ones.</span>
+                            <span class="resource-tag tag-free">Free</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2FA -->
+                <div class="resource-category">
+                    <h2>🔐 Two-Factor Authentication (2FA)</h2>
+                    <div class="resource-list">
+                        <div class="resource-card" data-paid="false">
+                            <span class="resource-title">Authy <a href="https://authy.com/" class="resource-link" target="_blank">Visit</a></span>
+                            <span class="resource-desc">Free app for managing 2FA codes across devices. Easy backup and restore.</span>
+                            <span class="resource-tag tag-free">Free</span>
+                        </div>
+                        <div class="resource-card" data-paid="false">
+                            <span class="resource-title">Google Authenticator <a href="https://support.google.com/accounts/answer/1066447" class="resource-link" target="_blank">Visit</a></span>
+                            <span class="resource-desc">Google's official 2FA app. Simple, secure, and widely supported.</span>
+                            <span class="resource-tag tag-free">Free</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Phishing Detection -->
+                <div class="resource-category">
+                    <h2>🚩 Phishing & Scam Detection</h2>
+                    <div class="resource-list">
+                        <div class="resource-card" data-paid="false">
+                            <span class="resource-title">Google Safe Browsing <a href="https://transparencyreport.google.com/safe-browsing/search" class="resource-link" target="_blank">Visit</a></span>
+                            <span class="resource-desc">Check if a website is flagged as unsafe or suspicious by Google.</span>
+                            <span class="resource-tag tag-free">Free</span>
+                        </div>
+                        <div class="resource-card" data-paid="false">
+                            <span class="resource-title">PhishTank <a href="https://www.phishtank.com/" class="resource-link" target="_blank">Visit</a></span>
+                            <span class="resource-desc">Community-powered database of known phishing sites. Search or report suspicious links.</span>
+                            <span class="resource-tag tag-free">Free</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Security Learning -->
+                <div class="resource-category">
+                    <h2>📚 Security Learning & Best Practices</h2>
+                    <div class="resource-list">
+                        <div class="resource-card" data-paid="false">
+                            <span class="resource-title">StaySafeOnline <a href="https://staysafeonline.org/" class="resource-link" target="_blank">Visit</a></span>
+                            <span class="resource-desc">Tips and resources for online safety, privacy, and digital citizenship.</span>
+                            <span class="resource-tag tag-free">Free</span>
+                        </div>
+                        <div class="resource-card" data-paid="false">
+                            <span class="resource-title">Google Safety Center <a href="https://safety.google/" class="resource-link" target="_blank">Visit</a></span>
+                            <span class="resource-desc">Google's official hub for security tips, privacy controls, and family safety.</span>
+                            <span class="resource-tag tag-free">Free</span>
+                        </div>
+                        <div class="resource-card" data-paid="false">
+                            <span class="resource-title">CyberAware (UK) <a href="https://www.ncsc.gov.uk/cyberaware/home" class="resource-link" target="_blank">Visit</a></span>
+                            <span class="resource-desc">UK government's security advice for individuals and small businesses.</span>
+                            <span class="resource-tag tag-free">Free</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Reporting & Help -->
+                <div class="resource-category">
+                    <h2>🆘 Reporting & Help</h2>
+                    <div class="resource-list">
+                        <div class="resource-card" data-paid="false">
+                            <span class="resource-title">Report Phishing to Google <a href="https://safebrowsing.google.com/safebrowsing/report_phish/?hl=en" class="resource-link" target="_blank">Visit</a></span>
+                            <span class="resource-desc">Official Google form to report phishing websites and emails.</span>
+                            <span class="resource-tag tag-free">Free</span>
+                        </div>
+                        <div class="resource-card" data-paid="false">
+                            <span class="resource-title">Facebook Hacked Account Help <a href="https://www.facebook.com/hacked" class="resource-link" target="_blank">Visit</a></span>
+                            <span class="resource-desc">Step-by-step help for recovering a hacked Facebook account.</span>
+                            <span class="resource-tag tag-free">Free</span>
+                        </div>
+                        <div class="resource-card" data-paid="false">
+                            <span class="resource-title">Instagram Help Center <a href="https://help.instagram.com/" class="resource-link" target="_blank">Visit</a></span>
+                            <span class="resource-desc">Official Instagram support for account recovery, security, and reporting.</span>
+                            <span class="resource-tag tag-free">Free</span>
+                        </div>
+                        <div class="resource-card" data-paid="false">
+                            <span class="resource-title">Twitter Help Center <a href="https://help.twitter.com/forms/hacked" class="resource-link" target="_blank">Visit</a></span>
+                            <span class="resource-desc">Help for hacked Twitter accounts and reporting abuse.</span>
+                            <span class="resource-tag tag-free">Free</span>
+                        </div>
+                        <div class="resource-card" data-paid="false">
+                            <span class="resource-title">LinkedIn Safety Center <a href="https://www.linkedin.com/help/linkedin/answer/62931" class="resource-link" target="_blank">Visit</a></span>
+                            <span class="resource-desc">LinkedIn's official safety and recovery resources.</span>
+                            <span class="resource-tag tag-free">Free</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <span class="logo-icon">🔐</span>
+                <span class="logo">SecureMe</span>
+            </div>
+            <p class="footer-text">
+                Built with ❤️ for GDG WOW 2025 Hackathon
+            </p>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+    <!-- Toast placeholder -->
+    <!-- Toasts are injected dynamically by main.js -->
+    <div id="toast-container"></div>
+</body>
+</html> 

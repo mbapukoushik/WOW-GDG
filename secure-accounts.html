@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure My Accounts - SecureMe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body class="bg-white">
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🔐</span>
+                SecureMe
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="secure-accounts.html" class="active">Accounts</a></li>
+                <li><a href="hacked.html">Hacked</a></li>
+                <li><a href="ai-assistant.html">Assistant</a></li>
+                <li><a href="security-tools.html">Tools</a></li>
+                <li><a href="security-resources.html">Resources</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Open menu" onclick="toggleMobileMenu()">
+                <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <ul class="mobile-nav-links" id="mobileNavLinks" style="display:none;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="secure-accounts.html" class="active">Accounts</a></li>
+            <li><a href="hacked.html">Hacked</a></li>
+            <li><a href="ai-assistant.html">Assistant</a></li>
+            <li><a href="security-tools.html">Tools</a></li>
+            <li><a href="security-resources.html">Resources</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container text-center">
+                <h1 class="heading-1">
+                    Secure Your Accounts
+                </h1>
+                <p class="text-large">
+                    Step-by-step guides to protect your most important accounts. 
+                    Choose a platform to get started.
+                </p>
+            </div>
+        </section>
+
+        <!-- Wavy Divider -->
+        <div class="wavy-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:80px;display:block;">
+                <path d="M0,40 C360,120 1080,-40 1440,40 L1440,100 L0,100 Z" fill="url(#blue-gradient)"/>
+                <defs>
+                    <linearGradient id="blue-gradient" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#3b82f6"/>
+                        <stop offset="1" stop-color="#dbeafe"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <!-- Category Filters -->
+        <section class="section">
+            <div class="container">
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">
+                        All Platforms
+                    </button>
+                    <button class="filter-btn" data-category="social">
+                        Social Media
+                    </button>
+                    <button class="filter-btn" data-category="communication">
+                        Communication
+                    </button>
+                    <button class="filter-btn" data-category="google">
+                        Google Services
+                    </button>
+                    <button class="filter-btn" data-category="professional">
+                        Professional
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Grid -->
+        <section class="section bg-gray-50">
+            <div class="container">
+                <div class="platforms-grid">
+                    <!-- Instagram -->
+                    <div class="platform-item" data-category="social">
+                        <div class="platform-card-large">
+                            <div class="platform-header">
+                                <div class="platform-icon-large">📸</div>
+                                <div class="platform-info">
+                                    <h3 class="platform-title">Instagram</h3>
+                                    <p class="platform-desc">Secure your photos and social connections</p>
+                                </div>
+                            </div>
+                            <div class="platform-steps">
+                                <div class="step-item">
+                                    <span class="step-number">1</span>
+                                    <span class="step-text">Enable Two-Factor Authentication</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">2</span>
+                                    <span class="step-text">Review Active Sessions</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">3</span>
+                                    <span class="step-text">Update Privacy Settings</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">4</span>
+                                    <span class="step-text">Check App Permissions</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-full" onclick="openGuide('instagram')">
+                                Get Secure Guide →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Snapchat -->
+                    <div class="platform-item" data-category="social">
+                        <div class="platform-card-large">
+                            <div class="platform-header">
+                                <div class="platform-icon-large">👻</div>
+                                <div class="platform-info">
+                                    <h3 class="platform-title">Snapchat</h3>
+                                    <p class="platform-desc">Protect your disappearing messages</p>
+                                </div>
+                            </div>
+                            <div class="platform-steps">
+                                <div class="step-item">
+                                    <span class="step-number">1</span>
+                                    <span class="step-text">Enable Two-Factor Authentication</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">2</span>
+                                    <span class="step-text">Review Login Activity</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">3</span>
+                                    <span class="step-text">Manage Privacy Settings</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">4</span>
+                                    <span class="step-text">Control Who Can Contact You</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-full" onclick="openGuide('snapchat')">
+                                Get Secure Guide →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Telegram -->
+                    <div class="platform-item" data-category="communication">
+                        <div class="platform-card-large">
+                            <div class="platform-header">
+                                <div class="platform-icon-large">✈️</div>
+                                <div class="platform-info">
+                                    <h3 class="platform-title">Telegram</h3>
+                                    <p class="platform-desc">Secure your messaging and calls</p>
+                                </div>
+                            </div>
+                            <div class="platform-steps">
+                                <div class="step-item">
+                                    <span class="step-number">1</span>
+                                    <span class="step-text">Enable Two-Step Verification</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">2</span>
+                                    <span class="step-text">Set Up Secret Chats</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">3</span>
+                                    <span class="step-text">Manage Active Sessions</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">4</span>
+                                    <span class="step-text">Configure Privacy Settings</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-full" onclick="openGuide('telegram')">
+                                Get Secure Guide →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Gmail -->
+                    <div class="platform-item" data-category="google">
+                        <div class="platform-card-large">
+                            <div class="platform-header">
+                                <div class="platform-icon-large">📧</div>
+                                <div class="platform-info">
+                                    <h3 class="platform-title">Gmail</h3>
+                                    <p class="platform-desc">Secure your email communications</p>
+                                </div>
+                            </div>
+                            <div class="platform-steps">
+                                <div class="step-item">
+                                    <span class="step-number">1</span>
+                                    <span class="step-text">Enable 2-Step Verification</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">2</span>
+                                    <span class="step-text">Review Account Activity</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">3</span>
+                                    <span class="step-text">Check App Passwords</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">4</span>
+                                    <span class="step-text">Set Up Recovery Options</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-full" onclick="openGuide('gmail')">
+                                Get Secure Guide →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Google Account -->
+                    <div class="platform-item" data-category="google">
+                        <div class="platform-card-large">
+                            <div class="platform-header">
+                                <div class="platform-icon-large">🔍</div>
+                                <div class="platform-info">
+                                    <h3 class="platform-title">Google Account</h3>
+                                    <p class="platform-desc">Protect your entire Google ecosystem</p>
+                                </div>
+                            </div>
+                            <div class="platform-steps">
+                                <div class="step-item">
+                                    <span class="step-number">1</span>
+                                    <span class="step-text">Enable 2-Step Verification</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">2</span>
+                                    <span class="step-text">Review Security Settings</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">3</span>
+                                    <span class="step-text">Check Third-Party Apps</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">4</span>
+                                    <span class="step-text">Set Up Recovery Methods</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-full" onclick="openGuide('google')">
+                                Get Secure Guide →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- LinkedIn -->
+                    <div class="platform-item" data-category="professional">
+                        <div class="platform-card-large">
+                            <div class="platform-header">
+                                <div class="platform-icon-large">💼</div>
+                                <div class="platform-info">
+                                    <h3 class="platform-title">LinkedIn</h3>
+                                    <p class="platform-desc">Protect your professional network</p>
+                                </div>
+                            </div>
+                            <div class="platform-steps">
+                                <div class="step-item">
+                                    <span class="step-number">1</span>
+                                    <span class="step-text">Enable Two-Step Verification</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">2</span>
+                                    <span class="step-text">Review Profile Visibility</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">3</span>
+                                    <span class="step-text">Check Connection Requests</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">4</span>
+                                    <span class="step-text">Manage Privacy Settings</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-full" onclick="openGuide('linkedin')">
+                                Get Secure Guide →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Security Tips -->
+        <section class="section">
+            <div class="container">
+                <h2 class="heading-2 text-center mb-12">
+                    Quick Security Tips
+                </h2>
+                
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">🔑</div>
+                        <h3>Use Strong Passwords</h3>
+                        <p>Create unique passwords for each account using a password manager</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-icon">📱</div>
+                        <h3>Enable 2FA Everywhere</h3>
+                        <p>Two-factor authentication adds an extra layer of protection</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-icon">🔍</div>
+                        <h3>Regular Checkups</h3>
+                        <p>Review your account settings and activity monthly</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-icon">🚫</div>
+                        <h3>Be Wary of Phishing</h3>
+                        <p>Never click suspicious links or share passwords via email</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <span class="logo-icon">🔐</span>
+                <span class="logo">SecureMe</span>
+            </div>
+            <p class="footer-text">
+                Built with ❤️ for GDG WOW 2025 Hackathon
+            </p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <!-- Toast placeholder -->
+    <!-- Toasts are injected dynamically by main.js -->
+    <div id="toast-container"></div>
+
+</body>
+</html> 

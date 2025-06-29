@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureMe - Your Digital Safety Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body class="bg-white">
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <span class="logo-icon">🔐</span>
+                SecureMe
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="secure-accounts.html">Accounts</a></li>
+                <li><a href="hacked.html">Hacked</a></li>
+                <li><a href="ai-assistant.html">Assistant</a></li>
+                <li><a href="security-tools.html">Tools</a></li>
+                <li><a href="security-resources.html">Resources</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Open menu" onclick="toggleMobileMenu()">
+                <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <ul class="mobile-nav-links" id="mobileNavLinks" style="display:none;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="secure-accounts.html">Accounts</a></li>
+            <li><a href="hacked.html">Hacked</a></li>
+            <li><a href="ai-assistant.html">Assistant</a></li>
+            <li><a href="security-tools.html">Tools</a></li>
+            <li><a href="security-resources.html">Resources</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container text-center">
+                <h1 class="heading-1">
+                    Stay Safe Online
+                </h1>
+                <p class="text-large">
+                    Simple guides to secure your accounts and recover from hacks. 
+                    No technical knowledge required.
+                </p>
+                
+                <!-- Main Action Buttons -->
+                <div class="hero-buttons">
+                    <a href="secure-accounts.html" class="btn btn-primary btn-large">
+                        🛡️ Secure My Accounts
+                    </a>
+                    <a href="hacked.html" class="btn btn-danger btn-large">
+                        🚨 I've Been Hacked
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wavy Divider -->
+        <div class="wavy-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:80px;display:block;">
+                <path d="M0,40 C360,120 1080,-40 1440,40 L1440,100 L0,100 Z" fill="url(#blue-gradient)"/>
+                <defs>
+                    <linearGradient id="blue-gradient" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#3b82f6"/>
+                        <stop offset="1" stop-color="#dbeafe"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <!-- Simple Features -->
+        <section class="section">
+            <div class="container">
+                <h2 class="heading-2 text-center mb-12">
+                    How We Help You
+                </h2>
+                
+                <div class="grid-3">
+                    <!-- Feature 1 -->
+                    <div class="text-center">
+                        <div class="card-icon card-icon-blue">
+                            <span>📝</span>
+                        </div>
+                        <h3 class="heading-3">Step-by-Step Guides</h3>
+                        <p class="text-body">Easy instructions with screenshots for securing your accounts</p>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="text-center">
+                        <div class="card-icon card-icon-red">
+                            <span>⚡</span>
+                        </div>
+                        <h3 class="heading-3">Emergency Help</h3>
+                        <p class="text-body">Quick recovery steps when your accounts get hacked</p>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="text-center">
+                        <div class="card-icon card-icon-green">
+                            <span>🤖</span>
+                        </div>
+                        <h3 class="heading-3">AI Assistant</h3>
+                        <p class="text-body">Get personalized help for your specific security needs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wavy Divider -->
+        <div class="wavy-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:80px;display:block;">
+                <path d="M0,40 C360,120 1080,-40 1440,40 L1440,100 L0,100 Z" fill="url(#blue-gradient)"/>
+                <defs>
+                    <linearGradient id="blue-gradient" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#3b82f6"/>
+                        <stop offset="1" stop-color="#dbeafe"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <!-- Popular Platforms -->
+        <section class="section bg-gray-50">
+            <div class="container">
+                <h2 class="heading-2 text-center mb-12">
+                    Secure Your Most Important Accounts
+                </h2>
+                <div class="platform-grid">
+                    <a class="platform-card" href="instagram-guide.html">
+                        <div class="platform-icon">📸</div>
+                        <div class="platform-name">Instagram</div>
+                    </a>
+                    <a class="platform-card" href="snapchat-guide.html">
+                        <div class="platform-icon">👻</div>
+                        <div class="platform-name">Snapchat</div>
+                    </a>
+                    <a class="platform-card" href="telegram-guide.html">
+                        <div class="platform-icon">✈️</div>
+                        <div class="platform-name">Telegram</div>
+                    </a>
+                    <a class="platform-card" href="gmail-guide.html">
+                        <div class="platform-icon">📧</div>
+                        <div class="platform-name">Gmail</div>
+                    </a>
+                    <a class="platform-card" href="google-account-guide.html">
+                        <div class="platform-icon">🔍</div>
+                        <div class="platform-name">Google Account</div>
+                    </a>
+                    <a class="platform-card" href="linkedin-guide.html">
+                        <div class="platform-icon">💼</div>
+                        <div class="platform-name">LinkedIn</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Simple Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <span class="logo-icon">🔐</span>
+                <span class="logo">SecureMe</span>
+            </div>
+            <p class="footer-text">
+                Built with ❤️ for GDG WOW 2025 Hackathon
+            </p>
+        </div>
+    </footer>
+
+    <!-- Add this script before </body> -->
+    <script src="main.js"></script>
+    <!-- Toast placeholder -->
+    <!-- Toasts are injected dynamically by main.js -->
+    <div id="toast-container"></div>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I've Been Hacked - SecureMe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body class="bg-white">
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🔐</span>
+                SecureMe
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="secure-accounts.html">Accounts</a></li>
+                <li><a href="hacked.html" class="active">Hacked</a></li>
+                <li><a href="ai-assistant.html">Assistant</a></li>
+                <li><a href="security-tools.html">Tools</a></li>
+                <li><a href="security-resources.html">Resources</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Open menu" onclick="toggleMobileMenu()">
+                <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <ul class="mobile-nav-links" id="mobileNavLinks" style="display:none;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="secure-accounts.html">Accounts</a></li>
+            <li><a href="hacked.html" class="active">Hacked</a></li>
+            <li><a href="ai-assistant.html">Assistant</a></li>
+            <li><a href="security-tools.html">Tools</a></li>
+            <li><a href="security-resources.html">Resources</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Emergency Hero Section -->
+        <section class="emergency-hero">
+            <div class="container text-center">
+                <div class="emergency-icon">🚨</div>
+                <h1 class="heading-1">
+                    Don't Panic - We'll Help You
+                </h1>
+                <p class="text-large">
+                    Take a deep breath. We'll guide you through recovering your accounts step by step. 
+                    You're not alone in this.
+                </p>
+                <div class="emergency-actions">
+                    <button class="btn btn-danger btn-large" onclick="startEmergencyChecklist()">
+                        🚨 Start Emergency Checklist
+                    </button>
+                    <button class="btn btn-secondary btn-large" onclick="openAIAssistant()">
+                        🤖 Get AI Help Now
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Immediate Actions Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="heading-2 text-center mb-12">
+                    Immediate Actions (Do These First)
+                </h2>
+                
+                <div class="emergency-checklist">
+                    <div class="checklist-item" data-step="1">
+                        <div class="checklist-checkbox">
+                            <input type="checkbox" id="step1" onchange="updateProgress()">
+                            <label for="step1"></label>
+                        </div>
+                        <div class="checklist-content">
+                            <h3>🔒 Change Your Passwords</h3>
+                            <p>Start with your email and banking accounts. Use strong, unique passwords.</p>
+                            <div class="checklist-actions">
+                                <button class="btn btn-sm btn-primary" onclick="showPasswordGuide()">
+                                    How to Create Strong Passwords
+                                </button>
+                                <a href="security-tools.html" class="btn btn-sm btn-success" style="margin-left:0.5rem;">Open Security Tools</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-step="2">
+                        <div class="checklist-checkbox">
+                            <input type="checkbox" id="step2" onchange="updateProgress()">
+                            <label for="step2"></label>
+                        </div>
+                        <div class="checklist-content">
+                            <h3>📱 Enable Two-Factor Authentication</h3>
+                            <p>Add an extra layer of security to prevent future unauthorized access.</p>
+                            <div class="checklist-actions">
+                                <button class="btn btn-sm btn-primary" onclick="show2FAGuide()">
+                                    How to Enable 2FA
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-step="3">
+                        <div class="checklist-checkbox">
+                            <input type="checkbox" id="step3" onchange="updateProgress()">
+                            <label for="step3"></label>
+                        </div>
+                        <div class="checklist-content">
+                            <h3>🔍 Check for Suspicious Activity</h3>
+                            <p>Review your accounts for any unauthorized transactions or changes.</p>
+                            <div class="checklist-actions">
+                                <button class="btn btn-sm btn-primary" onclick="showActivityGuide()">
+                                    How to Check Account Activity
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-step="4">
+                        <div class="checklist-checkbox">
+                            <input type="checkbox" id="step4" onchange="updateProgress()">
+                            <label for="step4"></label>
+                        </div>
+                        <div class="checklist-content">
+                            <h3>📞 Contact Your Bank (If Financial)</h3>
+                            <p>If banking accounts are involved, call your bank immediately.</p>
+                            <div class="checklist-actions">
+                                <button class="btn btn-sm btn-danger" onclick="showBankingGuide()">
+                                    Banking Emergency Steps
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-step="5">
+                        <div class="checklist-checkbox">
+                            <input type="checkbox" id="step5" onchange="updateProgress()">
+                            <label for="step5"></label>
+                        </div>
+                        <div class="checklist-content">
+                            <h3>📧 Report to Platform Support</h3>
+                            <p>Contact the platform's support team to report the incident.</p>
+                            <div class="checklist-actions">
+                                <button class="btn btn-sm btn-primary" onclick="showReportingGuide()">
+                                    How to Report Hacking
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text">Progress: <span id="progressText">0/5</span> steps completed</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform-Specific Recovery -->
+        <section class="section bg-gray-50">
+            <div class="container">
+                <h2 class="heading-2 text-center mb-12">
+                    Which Account Was Hacked?
+                </h2>
+                
+                <div class="recovery-platforms">
+                    <div class="recovery-card" onclick="openRecoveryGuide('email')">
+                        <div class="recovery-icon">📧</div>
+                        <h3>Email Account</h3>
+                        <p>Gmail, Outlook, Yahoo, etc.</p>
+                        <span class="recovery-urgency high">High Priority</span>
+                    </div>
+
+                    <div class="recovery-card" onclick="openRecoveryGuide('social')">
+                        <div class="recovery-icon">📱</div>
+                        <h3>Social Media</h3>
+                        <p>Facebook, Instagram, Twitter</p>
+                        <span class="recovery-urgency medium">Medium Priority</span>
+                    </div>
+
+                    <div class="recovery-card" onclick="openRecoveryGuide('banking')">
+                        <div class="recovery-icon">🏦</div>
+                        <h3>Banking/Financial</h3>
+                        <p>Bank accounts, PayPal, etc.</p>
+                        <span class="recovery-urgency high">High Priority</span>
+                    </div>
+
+                    <div class="recovery-card" onclick="openRecoveryGuide('gaming')">
+                        <div class="recovery-icon">🎮</div>
+                        <h3>Gaming Account</h3>
+                        <p>Steam, PlayStation, Xbox</p>
+                        <span class="recovery-urgency low">Lower Priority</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calming Section -->
+        <section class="section">
+            <div class="container">
+                <div class="calming-message">
+                    <div class="calming-icon">💙</div>
+                    <h2>You're Going to Be Okay</h2>
+                    <p class="text-large">
+                        Most people recover their accounts successfully. Take it one step at a time, 
+                        and don't hesitate to ask for help. We're here to support you through this.
+                    </p>
+                    <div class="calming-actions">
+                        <button class="btn btn-primary" onclick="openAIAssistant()">
+                            🤖 Chat with AI Assistant
+                        </button>
+                        <button class="btn btn-secondary" onclick="showResources()">
+                            📚 Additional Resources
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <span class="logo-icon">🔐</span>
+                <span class="logo">SecureMe</span>
+            </div>
+            <p class="footer-text">
+                Built with ❤️ for GDG WOW 2025 Hackathon
+            </p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <!-- Toast placeholder -->
+    <!-- Toasts are injected dynamically by main.js -->
+    <div id="toast-container"></div>
+
+</body>
+</html> 

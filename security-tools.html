@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Tools - SecureMe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        .tools-section { max-width: 500px; margin: 2rem auto; background: #f9fafb; border-radius: 1rem; box-shadow: 0 2px 8px rgba(59,130,246,0.06); padding: 2rem; }
+        .tools-section h2 { color: var(--primary-blue-dark); margin-bottom: 1rem; }
+        .tools-section label { font-weight: 600; }
+        .tools-section input[type="text"], .tools-section input[type="email"] { width: 90%; max-width: 350px; margin: 0.5rem 0 1rem 0; padding: 0.5em 0.7em; border-radius: 0.4em; border: 1px solid #d1d5db; font-size: 1.1em; }
+        .tools-section .btn { margin-bottom: 1rem; }
+        .tools-section .result { margin-top: 0.7rem; font-weight: 500; }
+    </style>
+</head>
+<body class="bg-white">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🔐</span>
+                SecureMe
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="secure-accounts.html">Accounts</a></li>
+                <li><a href="hacked.html">Hacked</a></li>
+                <li><a href="ai-assistant.html">Assistant</a></li>
+                <li><a href="security-tools.html" class="active">Tools</a></li>
+                <li><a href="security-resources.html">Resources</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Open menu" onclick="toggleMobileMenu()">
+                <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <ul class="mobile-nav-links" id="mobileNavLinks" style="display:none;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="secure-accounts.html">Accounts</a></li>
+            <li><a href="hacked.html">Hacked</a></li>
+            <li><a href="ai-assistant.html">Assistant</a></li>
+            <li><a href="security-tools.html" class="active">Tools</a></li>
+            <li><a href="security-resources.html">Resources</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="tools-section">
+            <h2>🔑 Password Strength Meter</h2>
+            <label for="manualPasswordInput">Test Your Password:</label>
+            <input type="text" id="manualPasswordInput" placeholder="Type your password..." oninput="updateStrengthMeter(this.value)">
+            <span id="passwordStrength" class="result"></span>
+            <br>
+            <button class="btn btn-sm btn-success" onclick="generatePassword()" id="generatePasswordBtn">Generate Strong Password</button>
+            <span id="generatedPassword" style="display:none;font-family:monospace;font-size:1.1em;background:#f3f4f6;padding:0.3em 0.7em;border-radius:0.4em;"></span>
+            <button id="copyPasswordBtn" class="btn btn-sm btn-secondary" style="display:none;margin-left:0.5rem;" onclick="copyPassword()">Copy</button>
+        </section>
+        <section class="tools-section">
+            <h2>🔎 Email Breach Check</h2>
+            <p>Check if your email is in a data breach using the official HaveIBeenPwned website:</p>
+            <a href="https://haveibeenpwned.com/" target="_blank" rel="noopener" class="btn btn-primary btn-large">Check on HaveIBeenPwned.com</a>
+        </section>
+        <section class="tools-section">
+            <h2>🚩 Phishing Detector</h2>
+            <label for="phishingInput">Paste a suspicious link or email:</label>
+            <input type="text" id="phishingInput" placeholder="Paste link or email...">
+            <button class="btn btn-sm btn-danger" onclick="checkPhishing()">Check</button>
+            <div id="phishingResult" class="result"></div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <span class="logo-icon">🔐</span>
+                <span class="logo">SecureMe</span>
+            </div>
+            <p class="footer-text">
+                Built with ❤️ for GDG WOW 2025 Hackathon
+            </p>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+    <!-- Toast placeholder -->
+    <!-- Toasts are injected dynamically by main.js -->
+    <div id="toast-container"></div>
+</body>
+</html> 
